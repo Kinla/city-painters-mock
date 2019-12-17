@@ -5,20 +5,29 @@ import createSchema from 'part:@sanity/base/schema-creator'
 import schemaTypes from 'all:part:@sanity/base/schema-type'
 
 // We import object and document schemas
+import bannerHeader from './bannerHeader'
 import blockContent from './blockContent'
 import blockText from './blockText'
-import category from './category'
+// import category from './category'
 import companyInfo from './companyInfo'
+import ctaLarge from './ctaLarge'
+import ctaSmall from './ctaSmall'
+import feature from './feature'
+import featureList from './featureList'
 import figure from './figure'
 import mainImage from './mainImage'
-import page from './page'
-import person from './person'
-import post from './post'
-import postAuthor from './postAuthor'
-import project from './project'
-import projectMember from './projectMember'
+// import page from './page'
+// import person from './person'
+// import post from './post'
+// import postAuthor from './postAuthor'
+// import project from './project'
+// import projectMember from './projectMember'
+import servicePage from './servicePage'
+import servicePageSection from './servicePageSection'
 import siteSettings from './siteSettings'
 import slideshow from './slideshow'
+import testimonial from './testimonial'
+import testimonialList from './testimonialList'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -29,20 +38,29 @@ export default createSchema({
   types: schemaTypes.concat([
     // The following are document types which will appear
     // in the studio.
+    bannerHeader,
     blockContent,
     blockText,
-    category,
+    // category,
     companyInfo,
+    ctaLarge,
+    ctaSmall,
+    feature,
+    featureList,
     figure,
     mainImage,
-    page,
-    person,
-    post,
-    postAuthor,
-    project,
-    projectMember,
+    // page,
+    // person,
+    // post,
+    // postAuthor,
+    // project,
+    // projectMember,
+    servicePage,
+    servicePageSection,
     siteSettings,
-    slideshow
+    slideshow,
+    testimonial,
+    testimonialList
 
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
