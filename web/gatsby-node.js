@@ -8,19 +8,19 @@
 
 const path = require('path')
 
-exports.createPages = async ({ actions, graphql}) => {
+async function createServicePages (actions, graphql){
     const result = await graphql (`
         {
-            allSanityService {
-              edges{
-                node {
-                  slug {
-                    current
-                  }
+          allSanityService {
+            edges{
+              node {
+                slug {
+                  current
                 }
               }
             }
           }
+        }
     `)
 
     const services = result.data.allSanityService.edges.map(({node}) => node)
@@ -33,4 +33,36 @@ exports.createPages = async ({ actions, graphql}) => {
             }
         })
     })
+}
+
+async function createServicePages2 (actions, graphql){
+  const result = await graphql (`
+      {
+        allSanityService2 {
+          edges{
+            node {
+              slug {
+                current
+              }
+            }
+          }
+        }          
+      }
+  `)
+
+  const services2 = result.data.allSanityService2.edges.map(({node}) => node)
+  services2.forEach(service2 => {
+      actions.createPage({
+          path: service2.slug.current,
+          component: path.resolve('./src/templates/service2.js'),
+          context: {
+              slug: service2.slug.current
+          }
+      })
+  })    
+}
+
+exports.createPages = async ({ actions, graphql }) => {
+  await createServicePages(actions, graphql)
+  await createServicePages2(actions, graphql)
 }

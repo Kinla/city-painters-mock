@@ -30,8 +30,7 @@ export const query = graphql`
 
 
 export default ({ data }) => {
-    console.log(data.service._rawContent)
-    
+  
     return (
         <Layout>
             <div style={{
