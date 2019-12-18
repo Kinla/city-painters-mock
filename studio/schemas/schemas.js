@@ -23,6 +23,7 @@ import mainImage from './mainImage'
 // import project from './project'
 // import projectMember from './projectMember'
 import servicePage from './servicePage'
+import servicePage2 from './servicePage2'
 import servicePageSection from './servicePageSection'
 import siteSettings from './siteSettings'
 import slideshow from './slideshow'
@@ -56,6 +57,7 @@ export default createSchema({
     // project,
     // projectMember,
     servicePage,
+    servicePage2,
     servicePageSection,
     siteSettings,
     slideshow,

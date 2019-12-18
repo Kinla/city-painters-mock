@@ -85,7 +85,7 @@ export default ({ data }) => {
                     break;
                   case "ctaLarge":
                     return (
-                      <div className="text-center col-md-12 my-3">
+                      <div className={`text-center my-3 ${el.css}`}>
                         <h2>{el.title}</h2>
                         <p>{el.subTitle}</p>
                         <a href={el.url} class="btn btn-primary">{el.button}</a>
